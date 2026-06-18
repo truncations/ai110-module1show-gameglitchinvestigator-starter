@@ -106,8 +106,11 @@ if "history" not in st.session_state:
 
 st.subheader("Make a guess")
 
+# FIXME _1 : Displays Attempts left as 1 when the game is over even though the attempts left should be 0.
 st.info(
+    # FIXME _2 : Displays the range of guessing numbers incorrectly (low, high)? Why hardcoded?
     f"Guess a number between 1 and 100. "
+    # FIXME _2 : Displays an incorrect number of attempts left?
     f"Attempts left: {attempt_limit - st.session_state.attempts}"
 )
 
@@ -179,6 +182,7 @@ if submit:
                 f"Final score: {st.session_state.score}"
             )
         else:
+            # FIXME _1 : Some potential logic error that might cause the incorrect display.
             if st.session_state.attempts >= attempt_limit:
                 st.session_state.status = "lost"
                 st.error(

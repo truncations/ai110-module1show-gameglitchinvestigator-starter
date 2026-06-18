@@ -7,16 +7,20 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - What did the game look like the first time you ran it?
 - List at least two concrete bugs you noticed at the start  
   (for example: "the hints were backwards").
+- If the number of attempts left reaches 1, the game is over, even though the attempts left counter when the game is over should display 0.
+- Upon launch, if you switch difficultuies of the game to anything but Normal Difficulty, the 'Range' on the side bar would be correctly displayed, but the main text, "Guess a number between 1 and 100. Attempts left: 5" wouldn't update/show the correct range/number of attempts. Additionally, the Attempts allowed on the side bar does not match the attempts left displayed on the main page.
+- When I completed one game whether guessing correctly or using all of my attempts and not correctly guessing the number, pressing the "Restart" button would not do anything, no restart of the game occurred.
+- The number of attempts go down when you submit an invalid guess, which shouldn't be the case if the user made a mistake inputting an invalid value like text, or inputting nothing.
 
 **Bug Reproduction Log**
-
+- When you switch difficulties, the attempts counter does not 
 Document at least 3 bugs you found. Add rows as needed.
 
 | Input | Expected Behavior | Actual Behavior | Console Output / Error |
 |-------|-------------------|-----------------|------------------------|
-| | | | |
-| | | | |
-| | | | |
+| Guess of 0 | "Go LOWER!" hint shows  | "Go HIGHER!" hint should show | "none" |
+| Guess of -41 | "Go LOWER!" hint shows | "Go HIGHER!" hint should show | "none" |
+| Guess of 25551.322 | "Go HIGHER!" hint shows | "Go LOWER!" hint should show | "none" |
 
 ---
 
