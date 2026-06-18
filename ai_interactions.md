@@ -64,12 +64,12 @@
 
 <!-- Describe what you asked each model to do -->
 
-| | Model A | Model B |
-|-|---------|---------|
-| **Model name** | | |
-| **Response summary** | | |
-| **More Pythonic?** | | |
-| **Clearer explanation?** | | |
+|                          |    Model A     |   Model B   |
+|--------------------------|----------------|-------------|
+| **Model name**           | GitHub Copilot | Claude Code |
+| **Response summary**     |                |             |
+| **More Pythonic?**       |       NO       |     YES     |
+| **Clearer explanation?** |       NO       |     YES     |
 
 **Which did you prefer and why?**
 
