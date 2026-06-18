@@ -27,9 +27,15 @@ Document at least 3 bugs you found. Add rows as needed.
 ## 2. How did you use AI as a teammate?
 
 - Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)?
+    I utilized GitHub Copilot and Claude Code (as a last resort) for this project.
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
 
+CORRECT AI EXAMPLE
+An AI suggestion that was correct was when I finished refactoring the codebase from app.py (by splitting the logic and UI code into 2 separate files) was when I needed to fix an error in the function check_guess in logic_utils.py. The secret value was being improperly checked because the secret value was being parsed as a string, and so I noted this error to the AI by stating that the secret value was being parsed as a string initially as well as the checks for comparing the guess and secret value would be improper if we compared using strings. The AI suggested a result where it removed the initial try/catch statement and added a local variable to parse the secret value into an integer. Once the secret value was parsed into an integer we could use number inequality comparisons to compare if the value was exact or too high or too low. Then, we reversed the hint messages of "GO LOWER" and "GO HIGHER" to properly display the user the correct hint that they should follow. I verified this result of proper gameplay by testing the streamlit app directly. Since I had a devlog that I can work with, I looked at the secret value and inputted lower and higher values intentionally to make sure the "GO HIGHER" and "GO LOWER" respectively would show up.
+
+INCORRECT AI EXAMPLE
+An Incorrect AI Example that I faced was when I needed to fix the Attempts Left counter. The bug was that the attempts left counter would show 1 rather than 0 for when the game was over. Even though I prompted GitHub Copilot to make changes to fix this dilemma, the AI would constantly bounce between 2 solutions that didn't resolve the problem, by adding st.rerun() or trying to fix the conditional logic with the number of attempts. I continuously struggled with this despite providing results of my issues and validating the code written. The way I verified the results was by testing the app with the streamlit package since this was based on the user's experience. I tested incorrect attempts until the number of attempts left was low enough to warrant the game to end. At one point, GitHub Copilot rewrote code that already existed in the program and I denied that solution and ended up switching AI models to Claude Code to see if I could get a difference. After prompting what program i'm looking for AND the results I have already received, Claude Code explained the reasoning behind some of the errors of the code and the logic, and also fixed the issue with this display error by creating a variable to store the UI element rather than creating it on the spot.
 ---
 
 ## 3. Debugging and testing your fixes
